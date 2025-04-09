@@ -1,0 +1,128 @@
+.transactions-container {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 20px;
+}
+
+.transactions-header {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.filter-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.search-box input,
+.filter-type select,
+.filter-category select,
+.sort-by select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.income-amount {
+  color: var(--income-color);
+  font-weight: 600;
+}
+
+.expense-amount {
+  color: var(--expense-color);
+  font-weight: 600;
+}
+
+.actions {
+  width: 100px;
+  text-align: center;
+}
+
+.delete-btn {
+  background-color: var(--error-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  filter: brightness(1.1);
+}
+
+.no-transactions {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--text-secondary);
+}
+
+.add-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  filter: brightness(1.1);
+}
+
+.add-new-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .filter-controls {
+    grid-template-columns: 1fr;
+  }
+  
+  th:nth-child(2), 
+  td:nth-child(2) {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

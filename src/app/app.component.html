@@ -1,0 +1,27 @@
+<header class="navbar">
+  <div class="container">
+    <h1 class="app-title">Personal Finance Tracker</h1>
+    <div class="nav-container">
+      <nav class="nav-links">
+        <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        <a routerLink="/transactions" routerLinkActive="active">Transactions</a>
+        <a routerLink="/add" routerLinkActive="active">Add Transaction</a>
+        <a routerLink="/charts" routerLinkActive="active">3D Charts</a>
+      </nav>
+      <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-icon" *ngIf="(currentTheme$ | async) === 'light'">🌙</span>
+        <span class="theme-icon" *ngIf="(currentTheme$ | async) === 'dark'">☀️</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Personal Finance Tracker</p>
+  </div>
+</footer>

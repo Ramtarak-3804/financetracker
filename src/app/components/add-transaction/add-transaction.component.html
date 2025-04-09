@@ -1,0 +1,93 @@
+<div class="add-transaction-container">
+  <h2>Add New Transaction</h2>
+  
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()" class="transaction-form">
+    <div class="form-group">
+      <label for="type">Transaction Type</label>
+      <div class="type-selector">
+        <div 
+          class="type-option" 
+          [ngClass]="{'active': transactionForm.get('type')?.value === 'income'}"
+          (click)="setTransactionType('income')"
+        >
+          <span class="type-icon income">+</span>
+          <span>Income</span>
+        </div>
+        <div 
+          class="type-option" 
+          [ngClass]="{'active': transactionForm.get('type')?.value === 'expense'}"
+          (click)="setTransactionType('expense')"
+        >
+          <span class="type-icon expense">−</span>
+          <span>Expense</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input 
+        type="number" 
+        id="amount" 
+        formControlName="amount" 
+        placeholder="Enter amount"
+        min="0.01"
+        step="0.01"
+      />
+      <div *ngIf="transactionForm.get('amount')?.invalid && transactionForm.get('amount')?.touched" class="error-message">
+        <span *ngIf="transactionForm.get('amount')?.errors?.['required']">Amount is required</span>
+        <span *ngIf="transactionForm.get('amount')?.errors?.['min']">Amount must be greater than 0</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input 
+        type="text" 
+        id="description" 
+        formControlName="description" 
+        placeholder="Enter description" 
+      />
+      <div *ngIf="transactionForm.get('description')?.invalid && transactionForm.get('description')?.touched" class="error-message">
+        <span *ngIf="transactionForm.get('description')?.errors?.['required']">Description is required</span>
+        <span *ngIf="transactionForm.get('description')?.errors?.['maxlength']">Description can't exceed 100 characters</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" formControlName="category">
+        <option value="" disabled selected>Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </option>
+      </select>
+      <div *ngIf="transactionForm.get('category')?.invalid && transactionForm.get('category')?.touched" class="error-message">
+        <span *ngIf="transactionForm.get('category')?.errors?.['required']">Category is required</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input 
+        type="date" 
+        id="date" 
+        formControlName="date" 
+        [max]="today"
+      />
+      <div *ngIf="transactionForm.get('date')?.invalid && transactionForm.get('date')?.touched" class="error-message">
+        <span *ngIf="transactionForm.get('date')?.errors?.['required']">Date is required</span>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button 
+        type="submit" 
+        class="submit-btn" 
+        [disabled]="transactionForm.invalid">
+        Add Transaction
+      </button>
+      <button type="button" class="cancel-btn" routerLink="/transactions">Cancel</button>
+    </div>
+  </form>
+</div>

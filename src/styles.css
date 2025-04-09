@@ -1,0 +1,143 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Theme Variables */
+:root {
+  /* Default theme colors (light) */
+  --primary-color: #3f51b5;
+  --primary-hover: rgba(255, 255, 255, 0.1);
+  --primary-active: rgba(255, 255, 255, 0.2);
+  --accent-color: #ff4081;
+  --background: #f5f7fa;
+  --surface-color: #ffffff;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --text-on-primary: #ffffff;
+  --border-color: #dddddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg-income: #4caf50;
+  --card-bg-expense: #f44336;
+  --card-bg-balance: #2196f3;
+  --chart-bar-bg: #f44336;
+  --hover-bg: #f5f5f5;
+  --active-bg: #e0e0e0;
+  --disabled-bg: #bdbdbd;
+  --disabled-color: #757575;
+  --income-color: #4caf50;
+  --expense-color: #f44336;
+}
+
+/* Dark theme */
+.dark-theme {
+  --primary-color: #5c6bc0;
+  --primary-hover: rgba(255, 255, 255, 0.15);
+  --primary-active: rgba(255, 255, 255, 0.25);
+  --accent-color: #ff80ab;
+  --background: #121212;
+  --surface-color: #1e1e1e;
+  --error-color: #ef5350;
+  --success-color: #66bb6a;
+  --text-color: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --text-on-primary: #ffffff;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-bg-income: #388e3c;
+  --card-bg-expense: #d32f2f;
+  --card-bg-balance: #1976d2;
+  --chart-bar-bg: #d32f2f;
+  --hover-bg: #2c2c2c;
+  --active-bg: #333333;
+  --disabled-bg: #424242;
+  --disabled-color: #9e9e9e;
+  --income-color: #66bb6a;
+  --expense-color: #ef5350;
+}
+
+/* Light theme */
+.light-theme {
+  /* Same as root variables - provides explicit theme class */
+  --primary-color: #3f51b5;
+  --primary-hover: rgba(255, 255, 255, 0.1);
+  --primary-active: rgba(255, 255, 255, 0.2);
+  --accent-color: #ff4081;
+  --background: #f5f7fa;
+  --surface-color: #ffffff;
+  --error-color: #f44336;
+  --success-color: #4caf50;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --text-on-primary: #ffffff;
+  --border-color: #dddddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg-income: #4caf50;
+  --card-bg-expense: #f44336;
+  --card-bg-balance: #2196f3;
+  --chart-bar-bg: #f44336;
+  --hover-bg: #f5f5f5;
+  --active-bg: #e0e0e0;
+  --disabled-bg: #bdbdbd;
+  --disabled-color: #757575;
+  --income-color: #4caf50;
+  --expense-color: #f44336;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Form Styles */
+input, select, button {
+  font-family: inherit;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}

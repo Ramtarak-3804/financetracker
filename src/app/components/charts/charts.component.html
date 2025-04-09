@@ -1,0 +1,33 @@
+<div class="charts-container">
+  <h2 class="charts-title">Financial Visualizations</h2>
+  
+  <div class="chart-section">
+    <h3>Expense Analysis by Category and Month</h3>
+    <div class="chart-description">
+      <p>This heatmap shows your expenses across different categories over time. The intensity of color represents the amount spent.</p>
+      <p><strong>Tip:</strong> Hover over cells to see detailed expense information.</p>
+    </div>
+    <div class="chart-container" 
+         echarts 
+         [options]="expenseChartOptions" 
+         [loading]="!expenseChartOptions.series"></div>
+  </div>
+  
+  <div class="charts-grid">
+    <div class="chart-section">
+      <h3>Expense Categories</h3>
+      <div class="chart-container" 
+           echarts 
+           [options]="categoryPieOptions"
+           [loading]="!categoryPieOptions.series"></div>
+    </div>
+    
+    <div class="chart-section">
+      <h3>Monthly Income vs Expenses</h3>
+      <div class="chart-container" 
+           echarts 
+           [options]="monthlyOptions"
+           [loading]="!monthlyOptions.series"></div>
+    </div>
+  </div>
+</div>
